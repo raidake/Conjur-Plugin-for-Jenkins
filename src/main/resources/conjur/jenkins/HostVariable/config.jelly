@@ -1,0 +1,45 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	<f:entry title="${%Host Factory}" field="hostFactory" help="/plugin/conjur/help-hostfactory.html">
+        <f:textbox />
+    </f:entry>
+	<f:section title="Expiry Time">
+	<f:entry field="year" title="${%Year}" help="/plugin/conjur/help-expiryyear.html">
+        <f:select/>
+    </f:entry>
+	<f:entry field="month" title="${%Month}" help="/plugin/conjur/help-expirymonth.html">
+        <f:select/>
+    </f:entry>
+	<f:entry field="day" title="${%Day}" help="/plugin/conjur/help-expiryday.html">
+        <f:select/>
+    </f:entry>
+	<f:entry field="hour" title="${%Hour}" help="/plugin/conjur/help-expiryhour.html">
+        <f:select/>
+    </f:entry>
+	<f:entry field="minute" title="${%Minute}" help="/plugin/conjur/help-expiryminute.html">
+        <f:select/>
+    </f:entry>
+	<f:entry field="second" title="${%Second}" help="/plugin/conjur/help-expirysecond.html">
+        <f:select/>
+    </f:entry>
+	<f:entry field="timeZone" title="${%Time Zone Hour}">
+        <f:select/>
+    </f:entry>
+	</f:section>
+	<f:section title="">
+	<f:entry title="${%Variable}" field="variable" help="/plugin/conjur/help-environmentvariable.html">
+        <f:textbox />
+    </f:entry>
+	</f:section>
+	<f:advanced>
+		<f:entry field="cidr" title="${%CIDR}" help="/plugin/conjur/help-expirycidr.html">
+			<f:textbox />
+		</f:entry>
+	</f:advanced>
+	<f:entry title="">
+          <div align="right">
+            <f:repeatableDeleteButton />
+          </div>
+	</f:entry>
+</j:jelly>
+ 

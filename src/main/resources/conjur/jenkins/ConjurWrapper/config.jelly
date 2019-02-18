@@ -1,0 +1,28 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:entry title="${%Username}" field="username" help="/plugin/conjur/help-username.html">
+        <f:textbox clazz="required"/>
+    </f:entry>
+	<f:entry title="${%Password}" field="password" help="/plugin/conjur/help-password.html">
+        <f:password clazz="required"/>
+    </f:entry>
+	<f:entry title="${%Conjur Host}" field="conjurURL" description="${%URLDesc}" help="/plugin/conjur/help-conjurhost.html">
+        <f:textbox clazz="required"/>
+    </f:entry>
+	<f:validateButton title="Test Connection" progress="Testing..." method="testConnection" with="conjurURL" 
+	/>
+	<f:entry title="Environment Variables" field="resourceStacks">
+		<f:repeatableProperty field="resourceStacks" add="Add Resource" />
+	</f:entry>
+	<f:entry title="Create Host Tokens" field="hostStacks">
+		<f:repeatableProperty field="hostStacks" add="Add Host Token" />
+	</f:entry>
+	<f:advanced>
+        <f:entry title="${%ignoreSSL}" field="ignoreSSL"
+                 description="${%ignoreSSLDesc}" help="/plugin/conjur/help-ignoreSSL.html">
+            <f:checkbox />
+        </f:entry>
+    </f:advanced>
+	
+</j:jelly>
+ 
